@@ -19,7 +19,7 @@ class Circle_Test(unittest.TestCase):
         self.assertTrue(self.c1.In_Range())
 
     def test_R_Square(self):
-        R_true = 3 * (0.5**4)
+        R_true = 4 * (0.5**2)
         R_test = Total_R_Square(self.c_list)
         self.assertEqual(R_true, R_test)
 
