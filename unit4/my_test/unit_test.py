@@ -4,7 +4,7 @@ from circle_main import Total_R_Square, Max_Radius
 
 
 class Circle_Test(unittest.TestCase):
-    def init(self):
+    def setUp(self):
         self.c1 = circle(+0.5, +0.5, +0.5)
         self.c2 = circle(-0.5, +0.5, +0.5)
         self.c3 = circle(-0.5, -0.5, +0.5)
@@ -15,19 +15,19 @@ class Circle_Test(unittest.TestCase):
         self.c3.Append_To(self.c_list)
         self.c4.Append_To(self.c_list)
 
-    def Test_In_Range(self):
+    def test_In_Range(self):
         self.assertTrue(self.c1.In_Range())
 
-    def Test_R_Square(self):
+    def test_R_Square(self):
         R_true = 3 * (0.5**4)
         R_test = Total_R_Square(self.c_list)
         self.assertEqual(R_true, R_test)
 
-    def Test_Distance(self):
+    def test_Distance(self):
         D_true = 0
         D_test = self.c1.Distance(self.c2)
         self.assertEqual(D_true, D_test)
 
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    unittest.main()
